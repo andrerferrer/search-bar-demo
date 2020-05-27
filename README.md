@@ -7,8 +7,8 @@ We'll not talk about searching engines here.
 ## How to
 ### 1. Start with some data to work with
 In this case we have City and Restaurant models.
-[Check them here](https://github.com/andrerferrer/search_bar_demo/tree/master/app/models).
-Also, [check the seeds](https://github.com/andrerferrer/search_bar_demo/blob/master/db/seeds.rb).
+[Check them here](https://github.com/andrerferrer/search-bar-demo/tree/master/app/models).
+Also, [check the seeds](https://github.com/andrerferrer/search-bar-demo/blob/master/db/seeds.rb).
 
 ### 2. Follow the Mantra
 
