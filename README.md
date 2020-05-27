@@ -1,24 +1,45 @@
-# README
+## Goal
+This is an app to teach how to implement a search bar in Rails using the [simple_form gem](https://github.com/heartcombo/simple_form).
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Disclaimer
+We'll not talk about searching engines here. 
 
-Things you may want to cover:
+## How to
+### 1. Start with some data to work with
+In this case we have City and Restaurant models.
+[Check them here](https://github.com/andrerferrer/search_bar_demo/tree/master/app/models).
+Also, [check the seeds](https://github.com/andrerferrer/search_bar_demo/blob/master/db/seeds.rb).
 
-* Ruby version
+### 2. Follow the Mantra
 
-* System dependencies
+1. Routes 
+```ruby
+Rails.application.routes.draw do
+  root to: 'restaurants#index'
+  resources :restaurants, only: :index
+end
+```
 
-* Configuration
+2. Controller
+```ruby
+class RestaurantsController < ApplicationController
+  def index
+    if params[:search]
+      @restaurants = City.find_by(name: params[:search][:query]).restaurants
+    else
+      @restaurants = Restaurant.all
+    end
+  end
+end
+```
 
-* Database creation
+3. Views (with `simple_form` )
+```erb
+<%= simple_form_for :search, url: root_path, method: :get do |f| %>
+    <%= f.input :query, label: false, placeholder: "Which city?" %>
+    <%= f.submit "Search" %>
+<% end %>
+```
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Good luck, have fun!
