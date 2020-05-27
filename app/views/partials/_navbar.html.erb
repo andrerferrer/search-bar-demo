@@ -1,0 +1,5 @@
+<%= simple_form_for :search, url: root_path, method: :get do |f| %>
+    <%= f.input :query, label: false, placeholder: "Which city?" %>
+    <%= f.submit "Search" %>
+<% end %>
+
