@@ -1,6 +1,8 @@
 ## Goal
 This is an app to teach how to implement a search bar in Rails using the [simple_form gem](https://github.com/heartcombo/simple_form).
 
+Check my other demos [here](https://github.com/andrerferrer/dedemos/).
+
 ## Disclaimer
 We'll not talk about searching engines here. 
 
